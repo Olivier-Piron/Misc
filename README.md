@@ -14,3 +14,6 @@ Music player (wip): https://olivier-becode.github.io/Misc/MusicPlayer-JS-Tailwin
 
 
 Video animation: https://olivier-becode.github.io/Misc/video%20hover%20effect%20tailwind.html
+
+
+Cards: https://olivier-becode.github.io/Misc/Cards-Tailwind.html
