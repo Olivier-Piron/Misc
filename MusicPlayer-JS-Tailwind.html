@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2.0/dist/tailwind.min.css" rel="stylesheet">
+    <title>Javascript Music Player - Tailwind</title>
+</head>
+<body>
+
+<style>
+
+</style>
+
+<!--
+    1- Barre de progression musique -> V
+    2- Contrôle volume
+    3- 
+-->
+
+<div class="audio-player w-screen md:w-1/2 bg-gray-900 p-8 border-2 border-black">
+
+    <audio id="audio">
+      <source src="./Assets/Music/alexander-nakarada-wildlands.mp3" type="audio/mp3">
+    </audio>
+  
+    <div>
+    
+        <button id="playAudio"class="text-2xl text-white">></button>
+    
+        <div id="timeLine" class="w-72 h-2">
+            <div id="background" class="h-2 bg-gray-700 border-1">
+                <div id="progress" class="w-0 relative bg-white h-2"></div>
+            </div>
+        </div>
+      <p id="currentTime" class="text-white">00:00</p>
+  
+    </div>
+</div>
+
+<script>
+
+function $(id) { return document.getElementById(id); };
+const media = document.getElementById('audio');
+
+let ui = {
+  play: 'playAudio',
+  audio: 'audio',
+  progress: 'progress',
+  background: 'background',
+  currentTime: 'currentTime'
+};
+
+function togglePlay() {
+  if (media.paused === false) {
+    media.pause();
+    $(ui.play).classList.remove('pause');
+  } else {
+    media.play();
+    $(ui.play).classList.add('pause');
+  }
+}
+
+function calculatePercentPlayed() {
+  let progress = (media.currentTime / media.duration).toFixed(2) * 100;
+  $(ui.progress).style.width = `${progress}%`;
+}
+
+function calculateCurrentValue(currentTime) {
+  const currentMinute = parseInt(currentTime / 60) % 60;
+  const currentSecondsLong = currentTime % 60;
+  const currentSeconds = currentSecondsLong.toFixed();
+  const currentTimeFormatted = `${currentMinute < 10 ? `0${currentMinute}` : currentMinute}:${
+  currentSeconds < 10 ? `0${currentSeconds}` : currentSeconds
+  }`;
+  
+  return currentTimeFormatted;
+}
+
+function initProgressBar() {
+  const currentTime = calculateCurrentValue(media.currentTime);
+  $(ui.currentTime).innerHTML = currentTime;
+  $(ui.background).addEventListener('click', seek);
+
+  media.onended = () => {
+    $(ui.play).classList.remove('pause');
+    $(ui.progress).style.width = 0;
+    $(ui.currentTime).innerHTML = '00:00';
+  };
+
+  function seek(e) {
+    const percent = e.offsetX / this.offsetWidth;
+    media.currentTime = percent * media.duration;
+  }
+  
+  calculatePercentPlayed();
+}
+
+$(ui.play).addEventListener('click', togglePlay)
+$(ui.audio).addEventListener('timeupdate', initProgressBar);
+
+</script>
+
+</body>
+</html>
