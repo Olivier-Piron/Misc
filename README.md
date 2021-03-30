@@ -8,3 +8,6 @@ Cool graidents: https://olivier-becode.github.io/Misc/NiceColor-Gradients-Tailwi
 
 
 To do list (wip): https://olivier-becode.github.io/Misc/ToDoList-Tailwind.html
+
+
+Music player (wip): https://olivier-becode.github.io/Misc/MusicPlayer-JS-Tailwind.html
