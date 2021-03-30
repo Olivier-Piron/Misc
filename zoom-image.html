@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2.0.4/dist/tailwind.min.css" rel="stylesheet">
+    <title>Zoom image - Vanilla JS</title>
+</head>
+<body>
+
+<main class="min-h-screen bg-gray-700 flex flex-wrap items-center justify-center">
+
+    <div id="container" class="w-1/2 mb-48">
+        <img src="./Assets/IMG/zoom.jpg" id="imageOne" />
+        <div id="zoom" class="w-64 h-64 inner-shadow absolute border-2 opacity-0 z-index-50 rounded-full"></div>
+    </div>
+
+</main>
+
+<style>
+
+#container:hover #zoom, #container:active #zoom {
+  opacity: 1;
+}
+#zoom {
+  background: url('./Assets/IMG/zoom.jpg') no-repeat;
+}
+</style>
+
+<script>
+
+let zoom = function (){
+
+    document.getElementById('container').addEventListener('mousemove', function(e) {
+
+    let imageOne = document.getElementById('imageOne'),
+        zoomed = document.getElementById('zoom'),
+        x = e.pageX - this.offsetLeft,
+        y = e.pageY - this.offsetTop,
+        xperc = ((x/imageOne.width) * 100),
+        yperc = ((y/imageOne.height) * 100);
+
+    zoomed.style.backgroundPositionX = (xperc) + '%';
+    zoomed.style.backgroundPositionY = (yperc) + '%';
+
+    zoomed.style.left = (x+100) + 'px';
+    zoomed.style.top = (y) + 'px';
+
+  }, false);
+}();
+
+</script>
+    
+</body>
+</html>
