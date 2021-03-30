@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nice Color Gradients for Tailwind</title>
+    <link href="https://unpkg.com/tailwindcss@^2.0.4/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+    
+<main class="w-screen bg-gray-700">
+
+    <div class="p-4 text-4xl text-white text-center font-bold bg-gray-800 bg-opacity-90 focus:outline-none shadow shadow-inner">Select a Color Gradient</div>
+
+    <div id="bg" class="">
+        <div id="gradient" class="sm:w-screen m-auto xl:w-1/3 m-auto items-center justify-center p-4 text-xl text-white font-bold bg-gray-800 bg-opacity-70"></div>
+    </div>
+
+    <div id="slide" class="flex flex-wrap px-8 bg-gray-700 box-border border-8 border-gray-700 focus:outline-none transform duration-300">
+
+        <button onclick="selectGradient('1')" class="bg-gradient-to-tr from-gray-500 to-indigo-400 my-1 w-full overflow-hidden sm:my-1 sm:w-full md:my-1 md:w-full lg:my-1 lg:w-1/3 xl:my-1 xl:w-1/3 border-8 border-gray-700 transform hover:-translate-y-1 hover:border-0 focus:outline-none rounded-xl">
+            <div id="1" class="mt-36 p-2 bg-gray-800 align-bottom text-white text-center shadow-inner">bg-gradient-to-tr from-gray-500 to-indigo-400</div>
+        </button>
+        
+        <button onclick="selectGradient('2')" class="bg-gradient-to-tl from-yellow-200 to-blue-300 my-1 w-full overflow-hidden sm:my-1 sm:w-full md:my-1 md:w-full lg:my-1 lg:w-1/3 xl:my-1 xl:w-1/3 border-8 border-gray-700 transform hover:-translate-y-1 hover:border-0 focus:outline-none rounded-xl">
+            <div id="2" class="mt-36 p-2 bg-gray-800 align-bottom text-white text-center shadow-inner">bg-gradient-to-tl from-yellow-200 to-blue-300</div>
+        </button>
+        
+        <button onclick="selectGradient('3')" class="bg-gradient-to-l from-purple-300 to-indigo-400 my-1 w-full overflow-hidden sm:my-1 sm:w-full md:my-1 md:w-full lg:my-1 lg:w-1/3 xl:my-1 xl:w-1/3 border-8 border-gray-700 transform hover:-translate-y-1 hover:border-0 focus:outline-none rounded-xl">
+            <div id="3" class="mt-36 p-2 bg-gray-800 align-bottom text-white text-center shadow-inner">bg-gradient-to-l from-purple-300 to-indigo-400</div>
+        </button>
+        
+        <button onclick="selectGradient('4')" class="bg-gradient-to-br from-indigo-900 to-blue-500 my-1 w-full overflow-hidden sm:my-1 sm:w-full md:my-1 md:w-full lg:my-1 lg:w-1/3 xl:my-1 xl:w-1/3 border-8 border-gray-700 transform hover:-translate-y-1 hover:border-0 focus:outline-none rounded-xl">
+            <div id="4" class="mt-36 p-2 bg-gray-800 align-bottom text-white text-center shadow-inner">bg-gradient-to-br from-indigo-900 to-blue-500</div>
+        </button>
+        
+        <button onclick="selectGradient('5')" class="bg-gradient-to-t from-blue-400 to-blue-800 my-1 w-full overflow-hidden sm:my-1 sm:w-full md:my-1 md:w-full lg:my-1 lg:w-1/3 xl:my-1 xl:w-1/3 border-8 border-gray-700 transform hover:-translate-y-1 hover:border-0 focus:outline-none rounded-xl">
+            <div id="5" class="mt-36 p-2 bg-gray-800 align-bottom text-white text-center shadow-inner">bg-gradient-to-t from-blue-400 to-blue-800</div>
+        </button>
+        
+        <button onclick="selectGradient('6')" class="bg-gradient-to-br from-gray-800 to-indigo-800 my-1 w-full overflow-hidden sm:my-1 sm:w-full md:my-1 md:w-full lg:my-1 lg:w-1/3 xl:my-1 xl:w-1/3 border-8 border-gray-700 transform hover:-translate-y-1 hover:border-0 focus:outline-none rounded-xl">
+            <div id="6" class="mt-36 p-2 bg-gray-800 align-bottom text-white text-center shadow-inner">bg-gradient-to-br from-gray-800 to-indigo-800</div>
+        </button>
+        
+        <button onclick="selectGradient('7')" class="bg-gradient-to-bl from-indigo-100 to-indigo-900 my-1 w-full overflow-hidden sm:my-1 sm:w-full md:my-1 md:w-full lg:my-1 lg:w-1/3 xl:my-1 xl:w-1/3 border-8 border-gray-700 transform hover:-translate-y-1 hover:border-0 focus:outline-none rounded-xl">
+            <div id="7" class="mt-36 p-2 bg-gray-800 align-bottom text-white text-center shadow-inner">bg-gradient-to-bl from-indigo-100 to-indigo-900</div>
+        </button>
+        
+        <button onclick="selectGradient('8')" class="bg-gradient-to-tr from-yellow-900 to-blue-600 my-1 w-full overflow-hidden sm:my-1 sm:w-full md:my-1 md:w-full lg:my-1 lg:w-1/3 xl:my-1 xl:w-1/3 border-8 border-gray-700 transform hover:-translate-y-1 hover:border-0 focus:outline-none rounded-xl">
+            <div id="8" class="mt-36 p-2 bg-gray-800 align-bottom text-white text-center shadow-inner">bg-gradient-to-tr from-yellow-900 to-blue-600</div>
+        </button>
+        
+        <button onclick="selectGradient('9')" class="bg-gradient-to-tl from-green-900 to-yellow-200 my-1 w-full overflow-hidden sm:my-1 sm:w-full md:my-1 md:w-full lg:my-1 lg:w-1/3 xl:my-1 xl:w-1/3 border-8 border-gray-700 transform hover:-translate-y-1 hover:border-0 focus:outline-none rounded-xl">
+            <div id="9" class="mt-36 p-2 bg-gray-800 align-bottom text-white text-center shadow-inner">bg-gradient-to-tl from-green-900 to-yellow-200</div>
+        </button>
+        
+        <button onclick="selectGradient('10')" class="bg-gradient-to-tr from-blue-100 to-green-700 my-1 w-full overflow-hidden sm:my-1 sm:w-full md:my-1 md:w-full lg:my-1 lg:w-1/3 xl:my-1 xl:w-1/3 border-8 border-gray-700 transform hover:-translate-y-1 hover:border-0 focus:outline-none rounded-xl">
+            <div id="10" class="mt-36 p-2 bg-gray-800 align-bottom text-white text-center shadow-inner">bg-gradient-to-tr from-blue-100 to-green-700</div>
+        </button>
+        
+        <button onclick="selectGradient('11')" class="bg-gradient-to-l from-blue-700 to-green-900 my-1 w-full overflow-hidden sm:my-1 sm:w-full md:my-1 md:w-full lg:my-1 lg:w-1/3 xl:my-1 xl:w-1/3 border-8 border-gray-700 transform hover:-translate-y-1 hover:border-0 focus:outline-none rounded-xl">
+            <div id="11" class="mt-36 p-2 bg-gray-800 align-bottom text-white text-center shadow-inner">bg-gradient-to-l from-blue-700 to-green-900</div>
+        </button>
+        
+        <button onclick="selectGradient('12')" class="bg-gradient-to-br from-blue-400 to-purple-700 my-1 w-full overflow-hidden sm:my-1 sm:w-full md:my-1 md:w-full lg:my-1 lg:w-1/3 xl:my-1 xl:w-1/3 border-8 border-gray-700 transform hover:-translate-y-1 hover:border-0 focus:outline-none rounded-xl">
+            <div id="12" class="mt-36 p-2 bg-gray-800 align-bottom text-white text-center shadow-inner">bg-gradient-to-br from-blue-400 to-purple-700</div>
+        </button>
+        
+        <button onclick="selectGradient('13')" class="bg-gradient-to-t from-red-800 to-purple-300 my-1 w-full overflow-hidden sm:my-1 sm:w-full md:my-1 md:w-full lg:my-1 lg:w-1/3 xl:my-1 xl:w-1/3 border-8 border-gray-700 transform hover:-translate-y-1 hover:border-0 focus:outline-none rounded-xl">
+            <div id="13" class="mt-36 p-2 bg-gray-800 align-bottom text-white text-center shadow-inner">bg-gradient-to-t from-red-800 to-purple-300</div>
+        </button>
+
+        <button onclick="selectGradient('14')" class="bg-gradient-to-tl from-gray-900 to-blue-400 my-1 w-full overflow-hidden sm:my-1 sm:w-full md:my-1 md:w-full lg:my-1 lg:w-1/3 xl:my-1 xl:w-1/3 border-8 border-gray-700 transform hover:-translate-y-1 hover:border-0 focus:outline-none rounded-xl">
+            <div id="14" class="mt-36 p-2 bg-gray-800 align-bottom text-white text-center shadow-inner">bg-gradient-to-tl from-gray-900 to-blue-400</div>
+        </button>
+
+        <button onclick="selectGradient('15')" class="bg-gradient-to-tr from-gray-600 to-gray-800 my-1 w-full overflow-hidden sm:my-1 sm:w-full md:my-1 md:w-full lg:my-1 lg:w-1/3 xl:my-1 xl:w-1/3 border-8 border-gray-700 transform hover:-translate-y-1 hover:border-0 focus:outline-none rounded-xl">
+            <div id="15" class="mt-36 p-2 bg-gray-800 align-bottom text-white text-center shadow-inner">bg-gradient-to-tr from-gray-600 to-indigo-800</div>
+        </button>
+
+        <button onclick="selectGradient('16')" class="bg-gradient-to-tl from-red-700 to-indigo-800 my-1 w-full overflow-hidden sm:my-1 sm:w-full md:my-1 md:w-full lg:my-1 lg:w-1/3 xl:my-1 xl:w-1/3 border-8 border-gray-700 transform hover:-translate-y-1 hover:border-0 focus:outline-none rounded-xl">
+            <div id="16"  class="mt-36 p-2 bg-gray-800 align-bottom text-white text-center shadow-inner">bg-gradient-to-tl from-red-700 to-indigo-800</div>
+        </button>
+
+        <button onclick="selectGradient('17')" class="bg-gradient-to-tr from-pink-700 to-red-500 my-1 w-full overflow-hidden sm:my-1 sm:w-full md:my-1 md:w-full lg:my-1 lg:w-1/3 xl:my-1 xl:w-1/3 border-8 border-gray-700 transform hover:-translate-y-1 hover:border-0 focus:outline-none rounded-xl">
+            <div id="17" class="mt-36 p-2 bg-gray-800 align-bottom text-white text-center shadow-inner">bg-gradient-to-tr from-pink-700 to-red-500</div>
+        </button>
+
+        <button onclick="selectGradient('18')" class="bg-gradient-to-bl from-green-800 to-purple-900 my-1 w-full overflow-hidden sm:my-1 sm:w-full md:my-1 md:w-full lg:my-1 lg:w-1/3 xl:my-1 xl:w-1/3 border-8 border-gray-700 transform hover:-translate-y-1 hover:border-0 focus:outline-none rounded-xl">
+            <div id="18" class="mt-36 p-2 bg-gray-800 align-bottom text-white text-center shadow-inner">bg-gradient-to-bl from-green-800 to-purple-900</div>
+        </button>
+
+    </div>
+</main>
+<script>
+
+function selectGradient(i) {
+
+
+    bg = document.getElementById("bg")
+
+    if (bg.classList.contains(i)) {
+        bg.classList = "";
+        document.getElementById("slide").classList.remove("translate-y-80");
+        document.getElementById("gradient").innerHTML = "";
+    } 
+    else {
+        bg.classList = "transform duration-300 z-50 w-screen shadow-xl fixed top-0 border-b-2 border-gray-800 " + document.getElementById(i).innerHTML + " h-96 " + i ;
+        document.getElementById("slide").classList += " translate-y-80";
+        document.getElementById("gradient").innerHTML = document.getElementById(i).innerHTML;
+    }
+}
+
+
+
+</script>
+
+</body>
+</html>
