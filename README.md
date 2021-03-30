@@ -17,3 +17,6 @@ Video animation: https://olivier-becode.github.io/Misc/video%20hover%20effect%20
 
 
 Cards: https://olivier-becode.github.io/Misc/Cards-Tailwind.html
+
+
+Image zoom: https://olivier-becode.github.io/Misc/zoom-image.html
