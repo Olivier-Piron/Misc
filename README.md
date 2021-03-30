@@ -11,3 +11,6 @@ To do list (wip): https://olivier-becode.github.io/Misc/ToDoList-Tailwind.html
 
 
 Music player (wip): https://olivier-becode.github.io/Misc/MusicPlayer-JS-Tailwind.html
+
+
+Video animation: https://olivier-becode.github.io/Misc/video%20hover%20effect%20tailwind.html
