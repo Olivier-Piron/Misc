@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List - Javascript + Tailwind</title>
+    <link href="https://unpkg.com/tailwindcss@^2.0.4/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+
+<main class="h-screen w-screen bg-gray-700">
+    <div class="lg:flex flex-col lg:flex-row shadow-2xl rounded-lg align-items lg:mx-24">
+        <div id="nav" class="px-12 py-16 flex flex-col lg:w-2/12 w-full text-white bg-gray-800 flex-shrink-0 transform -translate-y-72 lg:translate-y-0">
+          <button class="mt-8 text-left hover:text-blue-500">Today</button>
+          <button class="mt-8 text-left hover:text-blue-500">Tommorrow</button>
+          <button class="mt-8 text-left hover:text-blue-500">This Week</button>
+          <button class="mt-8 text-left hover:text-blue-500">Later</button>
+          <button onclick="slide()" class="mt-8 text-left hover:text-blue-500 lg:invisible"><img src="./Assets/IMG/hamburger.png" style="height: 1.5em;" alt="v"></button>
+    </div>
+
+
+    <div id="taskList" class="right p-12 flex-col lg:w-10/12 w-full text-gray-800 bg-white flex-shrink-0 transform -translate-y-72 lg:translate-y-0">
+        <span id="day" class="text-5xl text-bold">1</span>
+        <span id="month" class="text-xl text-blue-400">January</span>
+
+        <div class="chevron mt-8 text-xl hover:text-black"> Today's Tasks:</div>
+        <p id="todayTasks"></p>
+
+        <div class="mt-4 p-2">
+            <input type="checkbox">&nbsp &nbsp Finish this To Do List <button class="float-right p-1 transform hover:scale-110"> <img src="./Assets/IMG/cross.png" style="height: 1em;" alt="X"> </button>
+        </div>
+        <hr>
+
+        <div class="mt-4">
+          <label for="NewTask" class="block invisible h-0">New Task</label>
+                <input 
+                    id="newTask"
+                    type="text" 
+                    autofocus id="newTask" 
+                    class="rounded px-4 py-3 mt-3 focus:outline-none lg:w-2/3 w-full border focus:outline-none shadow" 
+                    placeholder="+ New task"
+                    onkeypress="return /[a-z0-9]/i.test(event.key)"
+                    value=""
+                    required
+                />
+                <select class="rounded px-4 py-3 mt-3 focus:outline-none lg:w-1/4 w-full border focus:outline-none appearance-none shadow">
+                    <option>Today</option>
+                    <option>Tomorrow</option>
+                    <option>This week</option>
+                    <option>Later</option>
+                </select>
+              <button onclick="createTask()" class="lg:float-right py-3 xl:px-4 mt-3 xl:bg-blue-400 xl:text-gray-100">Add</button>
+        </div>
+
+        <div class="chevron mt-12 text-xl hover:text-black"> Completed Tasks:</div> 
+        <p id="completed"></p>
+
+        <div class="mt-4 p-2">
+            <input type="checkbox" checked>&nbsp &nbsp Start coding this To Do List <button class="float-right p-1 transform hover:scale-110"> <img src="./Assets/IMG/cross.png" style="height: 1em;" alt="X"> </button>
+        </div>
+        <hr>
+
+    </div>
+</main> 
+
+<style>
+input:valid {
+    background-color: rgba(59, 130, 246, 0.2);
+    background-image : url(./Assets/IMG/check.png);
+    background-repeat: no-repeat;
+    background-size: 1.5em;
+    background-position: right center;
+}
+.chevron {
+    background-image: url(./Assets/IMG/chevron.png);
+    background-repeat: no-repeat;
+    background-size: 1.5em;
+    background-position: right center;
+}
+
+</style>
+    
+<script>
+
+function slide() {
+    if (document.getElementById("nav").classList.contains("-translate-y-72")) {
+        document.getElementById("nav").classList.remove("-translate-y-72")
+        document.getElementById("taskList").classList.remove("-translate-y-72")
+    }
+    else {
+        document.getElementById("nav").classList.add("-translate-y-72")
+        document.getElementById("taskList").classList.add("-translate-y-72")
+    }
+    
+}
+
+const today = new Date()
+const month = today.toLocaleString('en-US', { month: 'long' })
+
+document.getElementById("day").innerHTML = today.getDate();
+document.getElementById("month").innerHTML = month;
+
+let n = 1;
+
+function createTask() {
+    let element = document.createElement("div");
+    let task = document.getElementById("newTask").value;
+    var text = document.createTextNode(task);
+    element.classList = "mt-4 p-2 " + n;
+    element.appendChild(text);
+    document.getElementById("todayTasks").appendChild(element);
+    element.insertAdjacentHTML("afterbegin", '<input type="checkbox"> &nbsp &nbsp');
+    element.insertAdjacentHTML("beforeend", ' <button class="float-right p-1 transform hover:scale-110"> <img src="./Assets/IMG/cross.png" style="height: 1em;" alt="X"> </button>')
+    element.insertAdjacentHTML("afterend", '<hr>');
+
+    n += 1;
+    document.getElementById("newTask").value = "";
+}
+</script>
+    
+</body>
+</html>
