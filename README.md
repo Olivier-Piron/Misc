@@ -26,3 +26,6 @@ Spinning animation: https://olivier-becode.github.io/Misc/Spinning%20animation%2
 
 
 Pomodoro timer: https://olivier-becode.github.io/Misc/PomdoroTimer-Tailwind.html
+
+
+Hidden Animation: https://olivier-becode.github.io/Misc/HiddenAnimation-Tailwind.html
