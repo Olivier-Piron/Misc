@@ -29,3 +29,6 @@ Pomodoro timer: https://olivier-becode.github.io/Misc/PomdoroTimer-Tailwind.html
 
 
 Hidden Animation: https://olivier-becode.github.io/Misc/HiddenAnimation-Tailwind.html
+
+
+Responsive navbar: https://olivier-becode.github.io/Misc/Navbar-Tailwind.html
