@@ -15,7 +15,7 @@
     
     <div class="w-3/4 lg:w-4/5 my-12 bg-gray-800 flex flex-wrap items-center justify-center rounded-md shadow-lg">
         
-        <div class="w-screen mt-4 text-center text-white text-3xl font-bold">Pomodoro Timer</div>
+        <div class="w-screen my-8 text-center text-white text-3xl font-bold">Pomodoro Timer</div>
         
         <div class="container">
             <div id="spin" class="m-auto mt-6 animate-spin duration-1000 rounded-full border-2 border-t-4 border-blue-400 hover:border-yellow-100 h-72 w-72 shadow"></div>
@@ -25,16 +25,15 @@
         <button onclick="pause()" id="button" class="button paused w-0 mb-4 box-border border-solid duration-100 focus:outline-none"></button>
 
         <div class="w-screen">
-            <button onclick="selectTime('bg-gradient-to-tl from-gray-800 to-blue-300', 25)" class="h-16 w-3/4 lg:w-1/4 m-12 bg-gray-800 text-gray-100 hover:text-blue-400 rounded-md transform hover:scale-105 duration-300 focus:outline-none">
+            <button onclick="selectTime('bg-gradient-to-tl from-gray-800 to-blue-300', 25)" class="h-16 w-3/4 lg:w-1/4 m-12 text-gray-100 hover:text-blue-400 transform hover:scale-105 duration-300 focus:outline-none">
                 <div class="text-xl font-bold">Pomodoro</div>
             </button>
-            
         
-            <button onclick="selectTime('bg-gradient-to-tr from-gray-800 to-blue-300', 5)" class="h-16 w-3/4 lg:w-1/4 m-12 bg-gray-800 text-gray-100 hover:text-blue-400 rounded-md transform hover:scale-105 duration-300 focus:outline-none">
+            <button onclick="selectTime('bg-gradient-to-tr from-gray-800 to-blue-300', 5)" class="h-16 w-3/4 lg:w-1/4 m-12 text-gray-100 hover:text-blue-400 transform hover:scale-105 duration-300 focus:outline-none">
                 <div class="text-xl font-bold">Short Break</div>
             </button>
         
-            <button onclick="selectTime('bg-gradient-to-br from-gray-800 to-blue-300', 15)" class="h-16 w-3/4 lg:w-1/4 m-12 bg-gray-800 text-gray-100 hover:text-blue-400 rounded-md transform hover:scale-105 duration-300 focus:outline-none">
+            <button onclick="selectTime('bg-gradient-to-br from-gray-800 to-blue-300', 15)" class="h-16 w-3/4 lg:w-1/4 m-12 text-gray-100 hover:text-blue-400 transform hover:scale-105 duration-300 focus:outline-none">
                 <div class="text-xl font-bold">Long Break</div>
             </button>
         </div>
@@ -45,13 +44,13 @@
 <style>
 
 .button {
-  height: 60px;
+  height: 40px;
   border-color: transparent transparent transparent white;
-  border-width: 30px 0 30px 50px;
+  border-width: 20px 0 20px 35px;
 }
 .paused {
   border-style: double;
-  border-width: 0px 0 0px 50px;
+  border-width: 0px 0 0px 35px;
 }
 
 </style>
