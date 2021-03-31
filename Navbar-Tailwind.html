@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2.0.4/dist/tailwind.min.css" rel="stylesheet">
+    <title>Navbar - Tailwind</title>
+</head>
+<body>
+
+<main class="h-screen w-screen bg-gray-700">
+    <div class="lg:flex flex-col shadow-2xl rounded-lg align-items">
+        <div id="nav" class="px-12 py-8 lg:p-0 flex flex-col lg:flex-row w-screen text-white bg-gray-800 flex-shrink-0 transform -translate-y-72 lg:translate-y-0">
+            <button class="mt-6 lg:mt-0 lg:mx-8 mt-4 lg:visible"><img src="./Assets/IMG/logo.png" style="height: 1.75em;" alt="W"></button>
+            <button class="mt-6 text-left lg:mt-0 lg:mx-8 lg:text-xs tracking-wider font-bold hover:text-blue-400">RESPONSIVE</button>
+            <button class="mt-6 text-left lg:mt-0 lg:mx-8 lg:text-xs tracking-wider font-bold hover:text-blue-400">NAVBAR</button>
+            <button class="mt-6 text-left lg:mt-0 lg:mx-8 lg:text-xs tracking-wider font-bold hover:text-blue-400">TAILWIND</button>
+            <button class="mt-6 text-left lg:mt-0 lg:mx-8 lg:text-xs tracking-wider font-bold hover:text-blue-400">JAVASCRIPT</button>
+            
+            <button onclick="slide()" class="mt-6 float-right hover:text-blue-500 lg:invisible"><img src="./Assets/IMG/hamburger.png" style="height: 1.5em;" alt="v"></button>
+        </div>
+
+    <div id="content" class="h-screen w-full text-gray-800 bg-white flex-shrink-0 transform -translate-y-72 lg:translate-y-0">
+
+    </div>
+
+</main>
+
+<script>
+
+function slide() {
+    if (document.getElementById("nav").classList.contains("-translate-y-72")) {
+        document.getElementById("nav").classList.remove("-translate-y-72")
+        document.getElementById("content").classList.remove("-translate-y-72")
+    }
+    else {
+        document.getElementById("nav").classList.add("-translate-y-72")
+        document.getElementById("content").classList.add("-translate-y-72")
+    } 
+}
+
+</script>
+</body>
+</html>
+
+<!--
+    <main class="h-screen w-screen bg-gray-700">
+    <div class="shadow-2xl rounded-lg align-items">
+        <div id="nav" class="px-12 text-white bg-gray-800 flex-shrink-0 transform -translate-y-72 lg:translate-y-0">
+            <button class="p-8 hover:text-blue-500">Today</button>
+            <button class="p-8 hover:text-blue-500">Tommorrow</button>
+            <button class="p-8 hover:text-blue-500">This Week</button>
+            <button class="p-8 hover:text-blue-500">Later</button>
+            <button onclick="slide()" class="mt-6 text-left hover:text-blue-500 lg:invisible"><img src="./Assets/IMG/hamburger.png" style="height: 1.5em;" alt="v"></button>
+        </div>
+    </div>
+</main>
+-->
