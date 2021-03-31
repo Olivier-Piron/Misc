@@ -20,3 +20,6 @@ Cards: https://olivier-becode.github.io/Misc/Cards-Tailwind.html
 
 
 Image zoom: https://olivier-becode.github.io/Misc/zoom-image.html
+
+
+Spinning animation: https://olivier-becode.github.io/Misc/Spinning%20animation%20-%20Tailwind.html
