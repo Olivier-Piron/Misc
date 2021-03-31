@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2.0.4/dist/tailwind.min.css" rel="stylesheet">
+    <title>Tailwind</title>
+</head>
+<body>
+
+<main class="min-h-screen bg-gray-700 flex flex-wrap items-center justify-center">
+
+    <div class="grid grid-col-1 bg-gray-800 p-4">
+        <span class="scrollBackground bg-clip-text text-6xl font-black m-6 duration-300 cursor-default">HIDDEN</span>
+    </div>  
+
+</main> 
+
+<style>
+
+.scrollBackground {
+    color: transparent;
+    background-image: linear-gradient(to bottom, transparent 50%, #3B82F6 50% );
+    background-size: 1% 200%;
+}
+.scrollBackground:hover {
+    background-position: 0 -100%;
+}
+
+</style>
+    
+</body>
+</html>
