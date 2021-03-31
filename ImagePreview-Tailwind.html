@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2.0.4/dist/tailwind.min.css" rel="stylesheet">
+    <title>Image Preview - Tailwind</title>
+</head>
+<body>
+
+<main class="min-h-screen bg-gray-700 flex flex-wrap items-center justify-center">
+
+    <input type="file" name="uploadfile" id="imageInput" class="h-0 w-0 invisible"/>
+    <label for="imageInput" class="p-12 m-8 bg-gray-800 text-xl text-white rounded shadow hover:text-blue-400 transform hover:scale-110 cursor-pointer focus:outline-none">Click here to preview an image</label>
+
+    <img id="imagePreview" class="h-1/2 w-3/4 lg:w-1/2">
+
+</main>
+
+<script>
+
+document.getElementById("imageInput");
+
+    imageInput.addEventListener('change', function() {
+
+    if (imageInput.files) {
+        let imagePreview = document.getElementById('imagePreview');
+        imagePreview.src = URL.createObjectURL(imageInput.files[0]); 
+    }
+    });
+
+</script>
+    
+</body>
+</html>
