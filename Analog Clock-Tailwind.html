@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2.0.4/dist/tailwind.min.css" rel="stylesheet">
+    <title>Analog Clock - Tailwind</title>
+</head>
+<body>
+
+<main class="main min-h-screen bg-gradient-to-bl from-gray-800 to-blue-300 flex flex-wrap justify-center">
+
+    <div class="w-3/4 lg:w-4/5 my-12 bg-gray-800 flex flex-wrap items-center justify-center rounded-md shadow-lg">
+
+        <div class="w-screen m-8 mb-0 text-center text-white text-3xl font-bold">Analog Clock</div>
+
+        <svg id="clock" width="600" height="600" viewBox="0 0 600 600">
+
+            <g id="hour">
+                <path class="stroke-current text-gray-900" stroke-width="8" fill="none" d="M300 300V160"/>
+                <circle class="sizing-box" fill="none" cx="300" cy="300" r="253.9"/>
+            </g>
+            <g id="minute">
+                <path class="stroke-current text-gray-900" stroke-width="8" fill="none" d="M300 300V85"/>
+                <circle class="sizing-box" fill="none" cx="300" cy="300" r="253.9"/>
+            </g>
+            
+            <g id="second">
+                <path class="stroke-current text-blue-400" stroke-width="4" fill="none" d="M300 350V80"/>
+                <circle class="sizing-box" fill="none" cx="300" cy="300" r="253.9"/>
+            </g>
+
+            <circle class="text-white" fill="white" stroke="#111827" stroke-width="5" cx="300" cy="300" r="7"/>
+            <circle stroke="#111827" fill="none" stroke-width="5" cx="300" cy="300" r="250"/>
+
+        </svg>
+
+    </div>
+</main>
+
+<style>
+
+#hour,
+#minute,
+#second {
+    transform-origin: 300px 300px;
+}
+
+</style>
+
+<script>
+
+const hourHand = document.querySelector("#hour");
+const minuteHand = document.querySelector("#minute");
+const secondHand = document.querySelector("#second");
+
+function runTheClock() {
+  
+    var date = new Date();
+    let hour = date.getHours()*30;
+    let min = date.getMinutes()*6;
+    let sec = date.getSeconds();
+
+    let hourRotation = hour + min/12;
+    let minuteRotation = min + sec/3600;
+    let secondRotation = sec * 6;
+ 
+    hourHand.style.transform = "rotate(" + hourRotation + "deg)";
+    minuteHand.style.transform = "rotate(" + minuteRotation + "deg)";
+    secondHand.style.transform = "rotate(" + secondRotation + "deg)";
+}
+
+var interval = setInterval(runTheClock, 1000);
+
+</script>
+    
+</body>
+</html>
