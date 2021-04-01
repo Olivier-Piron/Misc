@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2.0.4/dist/tailwind.min.css" rel="stylesheet">
+    <title>Inline Editor - Tailwind</title>
+</head>
+<body class="bg-gray-700">
+
+<main class="wrapper bg-gray-700 flex flex-wrap justify-center select-none">
+
+    <div class="w-4/5 h-screen lg:h-96 p-6 m-12 bg-gray-800 flex flex-wrap justify-center rounded-md shadow-lg">
+        
+        <button id="edit" class="w-3/4 lg:w-1/4 m-4 ml-8 text-left text-4xl text-gray-100 hover:text-blue-400 transform hover:scale-105 duration-100 focus:outline-none">Click here to edit</button>
+        
+        <div class="w-3/4 p-4">
+            <p id="text" class="text-lg text-left text-bold text-white">
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
+                commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
+                dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
+                culpa qui officia deserunt mollit anim id est laborum."
+            </p>
+        </div>
+    </div>
+
+</main>
+
+<script>
+
+let edit = document.getElementById("edit");
+let text = document.querySelectorAll("#text")
+
+edit.addEventListener("click", function(e) {
+  if (!text[0].isContentEditable) {
+    text[0].contentEditable = "true";
+    edit.innerHTML = "Save Changes";
+  } 
+  else {
+    text[0].contentEditable = "false";
+    edit.innerHTML = "Click here to edit";
+  }
+});
+
+</script>
+   
+</body>
+</html>
