@@ -38,3 +38,6 @@ Image Preview: https://olivier-becode.github.io/Misc/ImagePreview-Tailwind.html
 
 
 Move Image With Mouse: https://olivier-becode.github.io/Misc/MoveImageWithMouse-Tailwind.html
+
+
+Inline Text Edit: https://olivier-becode.github.io/Misc/InlineEdit-Tailwind.html
