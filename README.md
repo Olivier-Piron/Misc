@@ -41,3 +41,6 @@ Move Image With Mouse: https://olivier-becode.github.io/Misc/MoveImageWithMouse-
 
 
 Inline Text Edit: https://olivier-becode.github.io/Misc/InlineEdit-Tailwind.html
+
+
+Text Editor: TextEditor - https://olivier-becode.github.io/Misc/Tailwind.html
