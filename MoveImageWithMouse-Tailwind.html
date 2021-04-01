@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2.0.4/dist/tailwind.min.css" rel="stylesheet">
+    <title>Move image with mouse - Tailwind</title>
+</head>
+<body class="bg-gray-700">
+
+<main class="min-h-screen bg-gray-700 flex flex-wrap justify-center select-none">
+
+    <input type="file" name="uploadfile" id="imageInput" class="h-0 w-0 invisible"/>
+    <label for="imageInput" class="h-24 p-8 m-8 bg-gray-800 text-xl text-white rounded shadow hover:text-blue-400 transform hover:scale-110 cursor-pointer focus:outline-none">Click here to preview an image</label>
+
+    <div class="w-screen">
+        <img id="imagePreview" class="m-auto">
+    </div>
+
+</main>
+
+<style>
+
+img {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+}
+
+</style>
+
+<script>
+
+let imageInput = document.getElementById("imageInput");
+
+imageInput.addEventListener('change', function() {
+    if (imageInput.files) {
+        let imagePreview = document.getElementById('imagePreview');
+        imagePreview.style.height ="25em"
+        imagePreview.src = URL.createObjectURL(imageInput.files[0]);
+
+        mouseUpDown(); 
+    }
+});
+
+function mouseUpDown() {
+    window.addEventListener('mouseup', mouseUp, false);
+    window.addEventListener('mousedown', mouseDown, false);
+}
+
+function mouseUp() {
+    window.removeEventListener('mousemove', moveImage, true);
+}
+
+function mouseDown() {
+    window.addEventListener('mousemove', moveImage, true);
+}
+
+function moveImage(e){
+    let body = document.getElementsByTagName('body')[0]
+
+    let image = document.getElementById('imagePreview');
+    image.style.position = 'absolute';
+    image.style.left = e.clientX-250 + 'px';
+    image.style.top = e.clientY-250 + 'px';
+}
+
+</script>
+    
+</body>
+</html>
