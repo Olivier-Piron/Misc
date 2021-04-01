@@ -35,3 +35,6 @@ Responsive navbar: https://olivier-becode.github.io/Misc/Navbar-Tailwind.html
 
 
 Image Preview: https://olivier-becode.github.io/Misc/ImagePreview-Tailwind.html
+
+
+Move Image With Mouse: https://olivier-becode.github.io/Misc/MoveImageWithMouse-Tailwind.html
