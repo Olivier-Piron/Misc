@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2.0.4/dist/tailwind.min.css" rel="stylesheet">
+    <title>Image Preview - Tailwind</title>
+</head>
+
+<body>
+
+<main id="main" class="min-h-screen bg-gradient-to-bl from-gray-800 to-blue-300 flex flex-wrap justify-center">
+
+    <div class="w-3/4 lg:w-4/5 my-12 bg-gray-800 flex flex-wrap items-center justify-center rounded-md shadow-lg">
+        <div class="w-screen pt-4 text-center text-white text-3xl font-bold">Color Picker</div>
+
+        <input type="file" name="uploadfile" id="imageInput" class="h-0 w-0 invisible"/>
+        <label for="imageInput" class="w-3/4 pt-4 text-xl text-center text-white rounded hover:text-blue-400 transform hover:scale-110 cursor-pointer focus:outline-none">Click here to upload an image</label>
+
+            <img id="imagePreview" class="w-3/4 lg:w-1/2 p-8 pt-2" src="./Assets/IMG/zoom.jpg">
+            <canvas id="cs" class="hidden"></canvas>
+
+        <div id="preview" class="h-12 w-12 rounded shadow-xl"></div>
+
+        <div id="result" class="w-1/5 p-4 m-4 text-2xl text-center text-gray-100 border-2 border-gray-100 rounded">rgba(34,20,43)</div>
+
+    </div>
+</main> 
+
+<script>
+
+document.getElementById("imageInput");
+
+imageInput.addEventListener('change', function() {
+
+    if (imageInput.files) {
+        let imagePreview = document.getElementById('imagePreview');
+        imagePreview.src = URL.createObjectURL(imageInput.files[0]); 
+    }
+});
+
+let img = document.querySelector('#imagePreview');
+let canvas = document.querySelector('#cs');
+let result = document.querySelector('#result');
+let preview = document.querySelector('#preview');
+
+function drawCanvas(canvas,image,callback){
+    canvas.width = image.width; 
+    canvas.height = image.height; 
+
+    canvas.getContext('2d').drawImage(image, 0, 0, image.width, image.height);
+    return callback();
+}
+
+img.addEventListener('mousemove', function(e){
+    x = e.offsetX;
+    y = e.offsetY;  
+
+    drawCanvas(canvas,img,function(){
+    let rgba = canvas.getContext('2d').getImageData(x, y, 1, 1).data;
+
+    preview.style.background = "rgba(" + rgba[0] + "," + rgba[1] + "," + rgba[2] + ")";
+    });
+},false);
+
+img.addEventListener('click', function(e){
+    x = e.offsetX;
+    y = e.offsetY; 
+
+    drawCanvas(canvas,img,function(){
+    let rgba = canvas.getContext('2d').getImageData(x, y, 1, 1).data;  
+
+    result.innerHTML = "rgba(" + rgba[0] + "," + rgba[1] + "," + rgba[2] + "," + rgba[3] + ")";
+    document.body.style.background = "rgba(" + rgba[0] + "," + rgba[1] + "," + rgba[2] + ")";
+    });
+},false);
+
+</script>
+    
+</body>
+</html>
