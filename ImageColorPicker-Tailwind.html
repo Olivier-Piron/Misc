@@ -23,6 +23,7 @@
 
         <div id="preview" class="h-12 w-12 rounded shadow-xl"></div>
 
+        <div id="preview2" class="m-4 h-12 w-12 rounded shadow-xl"></div>
         <div id="result" class="w-1/5 p-4 m-4 text-xl text-center text-gray-100 border-2 border-gray-100 rounded">rgba(34,20,43)</div>
 
     </div>
@@ -42,8 +43,10 @@ imageInput.addEventListener('change', function() {
 
 let img = document.querySelector('#imagePreview');
 let canvas = document.querySelector('#cs');
-let result = document.querySelector('#result');
+
 let preview = document.querySelector('#preview');
+let result = document.querySelector('#result');
+let previewTwo = document.querySelector('#preview2');
 
 function drawCanvas(canvas,image,callback){
     canvas.width = image.width; 
@@ -71,8 +74,8 @@ img.addEventListener('click', function(e){
     drawCanvas(canvas,img,function(){
     let rgba = canvas.getContext('2d').getImageData(x, y, 1, 1).data;  
 
+    previewTwo.style.background = "rgba(" + rgba[0] + "," + rgba[1] + "," + rgba[2] + ")";
     result.innerHTML = "rgba(" + rgba[0] + "," + rgba[1] + "," + rgba[2] + "," + rgba[3] + ")";
-    document.body.style.background = "rgba(" + rgba[0] + "," + rgba[1] + "," + rgba[2] + ")";
     });
 },false);
 
