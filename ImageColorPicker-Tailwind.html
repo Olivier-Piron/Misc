@@ -63,7 +63,7 @@ img.addEventListener('mousemove', function(e){
     drawCanvas(canvas,img,function(){
     let rgba = canvas.getContext('2d').getImageData(x, y, 1, 1).data;
 
-    preview.style.background = "rgba(" + rgba[0] + "," + rgba[1] + "," + rgba[2] + ")";
+    preview.style.background = "rgba(" + rgba[0] + ", " + rgba[1] + ", " + rgba[2] + ")";
     });
 },false);
 
@@ -74,8 +74,8 @@ img.addEventListener('click', function(e){
     drawCanvas(canvas,img,function(){
     let rgba = canvas.getContext('2d').getImageData(x, y, 1, 1).data;  
 
-    previewTwo.style.background = "rgba(" + rgba[0] + "," + rgba[1] + "," + rgba[2] + ")";
-    result.innerHTML = "rgba(" + rgba[0] + "," + rgba[1] + "," + rgba[2] + "," + rgba[3] + ")";
+    previewTwo.style.background = "rgba(" + rgba[0] + ", " + rgba[1] + ", " + rgba[2] + ")";
+    result.innerHTML = "rgba(" + rgba[0] + ", " + rgba[1] + ", " + rgba[2] + ", " + rgba[3] + ")";
     });
 },false);
 
