@@ -46,7 +46,7 @@ Inline Text Edit: https://olivier-becode.github.io/Misc/InlineEdit-Tailwind.html
 Text Editor: https://olivier-becode.github.io/Misc/TextEditor-Tailwind.html
 
 
-Analog Clock: https://olivier-becode.github.io/Misc/Analog%20Clock-Tailwind.htmlµ
+Analog Clock: https://olivier-becode.github.io/Misc/Analog%20Clock-Tailwind.html
 
 
 Image color Picker: https://olivier-becode.github.io/Misc/ImageColorPicker-Tailwind.html
